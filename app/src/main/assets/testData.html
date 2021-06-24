@@ -1,0 +1,38 @@
+<html>
+<meta charset="utf-8">
+<head>
+    <title>js交互android</title>
+    <!-- <button id="btn">提交</button> -->
+    <div id="all">
+        <button v-on:click="push">提交</button>
+        <div>{{value}}</div>
+    </div>
+</head>
+<body>
+    <!-- <script>
+        var btn = document.getElementById("btn");
+        btn.onclick= function () {
+            var test = android.showToast("111")
+            document.write(test);
+        }
+        
+
+    </script> -->
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+        var vue = new Vue({
+            el: "#all",
+            data() {
+                return {
+                    value: undefined
+                }
+            },
+            methods: {
+                push() {
+                    this.value = window.android.showToast("111");
+                }
+            }
+        })
+	</script>
+</body>
+</html>
