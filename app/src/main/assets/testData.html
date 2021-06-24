@@ -6,6 +6,11 @@
     <div id="all">
         <button v-on:click="push">提交</button>
         <div>{{value}}</div>
+
+        <button v-on:click="page1">page1</button>
+        <button v-on:click="page2">page2</button>
+        <button v-on:click="page3">page3</button>
+        <div>{{result}}</div>
     </div>
 </head>
 <body>
@@ -24,12 +29,22 @@
             el: "#all",
             data() {
                 return {
-                    value: undefined
+                    value: undefined,
+                    result: undefined
                 }
             },
             methods: {
                 push() {
                     this.value = window.android.showToast("111");
+                },
+                page1() {
+                    this.result = window.android.getMusics();
+                },
+                page2() {
+                    this.result = window.android.getVideos();
+                },
+                page3() {
+                    this.result = window.android.getComments();
                 }
             }
         })
